@@ -18,6 +18,10 @@ use Inertia\Inertia;
 /*});*/
 /**/
 
+Route::get('/', function () {
+    return redirect('/finance');
+});
+
 Route::group(['prefix' => 'finance'], function () {
     Route::get('/', [FinanceController::class, 'index'])->name('finance.index');
 });
