@@ -16,7 +16,7 @@ export const columns: ColumnDef<Transaction>[] = [
                         {user.name.slice(0, 20)}
                     </span>
                     <div
-                        className={`flex items-center font-bold w-full ${category.is_expense ? "text-green-600" : "text-red-600"}`}
+                        className={`flex items-center font-bold w-full ${category.is_expense ? "text-red-600" : "text-green-600"}`}
                     >
                         {toRupiah(amount)}
                     </div>

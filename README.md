@@ -6,10 +6,12 @@ Aplikasi manajemen keuangan organisasi Karang Taruna Desa Sumberdawesari berbasi
 
 ## ✨ Fitur Utama
 
-- ✅ Manajemen transaksi: pendapatan dan pengeluaran
-- 📂 Kategori keuangan yang fleksibel
-- 👥 Role pengguna: Admin Admin Finance & Member
-- 📊 Dashboard laporan keuangan interaktif (Filament)
+- ✅ Manajemen transaksi (pendapatan & pengeluaran)
+- 📂 Kategori keuangan dinamis
+- 📁 Preview gambar & lampiran file transaksi (PDF/DOC/JPG/PNG)
+- 📊 Dashboard laporan keuangan admin (Laravel Filament)
+- 👥 Role pengguna: Admin & Member
+- 📱 Halaman frontend responsif untuk mobile (React + Tailwind)
 - 🔐 Autentikasi pengguna menggunakan Laravel Breeze
 
 ---
@@ -38,16 +40,20 @@ Aplikasi manajemen keuangan organisasi Karang Taruna Desa Sumberdawesari berbasi
 
 ### Persiapan Awal
 1. **Clone repositori:**
+
    ```bash
    git clone https://github.com/tado3002/systemKasKartar-LaravelFilament.git
    cd systemKasKartar-LaravelFilament
    ```
+
 2. **Install dependensi PHP & JavaScript:**
+
     ```bash
     composer install
     npm install
     ```
-3. **Salin dan sesuaikan file environment:**
+3. **Salin dan sesuaikan file .env:**
+
     ```dotenv
     DB_HOST=127.0.0.1
     DB_PORT=3306
@@ -55,18 +61,21 @@ Aplikasi manajemen keuangan organisasi Karang Taruna Desa Sumberdawesari berbasi
     DB_USERNAME=root
     DB_PASSWORD=
     ```
+
 4. **Migrasi & seed database:**
+
     ```dotenv
     php artisan migrate --seed
     ```
 5. **Buat symbolic link untuk akses file dari storage::**
+
     ```dotenv
     php artisan storage:link
     ```
 
 ### Mode Development
 
-    **Akan menjalankan backend Laravel dan Vite secara bersamaan**
+**Akan menjalankan backend Laravel dan Vite secara bersamaan**
 ```bash
     composer run dev
 ```
@@ -79,37 +88,47 @@ Aplikasi manajemen keuangan organisasi Karang Taruna Desa Sumberdawesari berbasi
 ```
 
 ## Authentikasi
-    - Sistem login menggunakan Laravel Breeze dengan Inertia.js.
-    - Pengguna yang login akan diarahkan ke halaman sesuai rolenya (Admin ke Filament, Member ke frontend publik).
 
-    >Untuk menambahkan data user dengan role admin, karena hanya role admin yang bisa menambahkan user
-    , maka gunakan seeder dari laravel
+- Sistem login menggunakan Laravel Breeze dengan Inertia.js.
+- Pengguna yang login akan diarahkan ke halaman sesuai rolenya (Admin ke Filament, Member ke frontend publik).
+
+>Untuk menambahkan data user dengan role admin, karena hanya role admin yang bisa menambahkan user
+, maka gunakan seeder dari laravel
 
 
-    **Ketikan perintah**
+**Ketikan perintah**
+
 ```bash
     php artisan db:seed UserAdminSeeder
 ```
 
-    ## Demo Account
+## Demo Account
 
-    | Role   | Email                                           | Password      |
-    | ------ | ----------------------------------------------- | --------------|
-    | admin  | [myAdmin@gmail.com]                             | adminpassword |
-    
+| Role   | Email                                           | Password      |
+| ------ | ----------------------------------------------- | --------------|
+| admin  | [myAdmin@gmail.com]                             | adminpassword |
+
+
+## 📺 Demo Aplikasi
+
+> Tonton demo aplikasi systemKasKartar melalui video berikut:
+
+[![Tonton Demo](https://img.youtube.com/vi/n1zOybHGU_4/0.jpg)](https://www.youtube.com/watch?v=n1zOybHGU_4)
+
+---
 
 ## Struktur Table
 
-    | Tabel          | Deskripsi                             |
-    | -------------- | ------------------------------------- |
-    | `users`        | Data pengguna aplikasi                |
-    | `categories`   | Kategori transaksi (Income / Expense) |
-    | `transactions` | Catatan transaksi keuangan            |
+| Tabel          | Deskripsi                             |
+| -------------- | ------------------------------------- |
+| `users`        | Data pengguna aplikasi                |
+| `categories`   | Kategori transaksi (Income / Expense) |
+| `transactions` | Catatan transaksi keuangan            |
 
 ## Note 
 
-    - Halaman publik seperti /finance dirender melalui Inertia dan dibangun dengan React + ShadCN.
-    - Panel admin (dashboard dan CRUD data) sepenuhnya dikendalikan melalui Laravel Filament.
+- Halaman publik seperti /finance dirender melalui Inertia dan dibangun dengan React + ShadCN.
+- Panel admin (dashboard dan CRUD data) sepenuhnya dikendalikan melalui Laravel Filament.
 
 ---
 

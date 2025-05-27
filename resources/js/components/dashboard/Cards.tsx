@@ -35,7 +35,7 @@ export const CardDashboard = ({ data }: CardDashboardProps) => {
                         <CardTitle className="text-xl">Sisa</CardTitle>
                     </CardHeader>
                     <CardContent className="text-2xl lg:text-4xl font-bold text-blue-600">
-                        {toRupiah(data.incomes)}
+                        {toRupiah(data.balance)}
                     </CardContent>
                 </Card>
             </div>
